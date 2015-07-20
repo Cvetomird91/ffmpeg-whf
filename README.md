@@ -3,6 +3,11 @@ Run as root to compile FFMpeg with the following Codecs:
 - Lame 
 - FAAC 
 - OpenCore AMR Codec 
+- OGG 
+- Vorbis 
+- Theora 
+- x264 
+- LibVPX 
 
 Preparation for Debian-based systems: 
 
