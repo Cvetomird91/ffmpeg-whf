@@ -36,7 +36,6 @@ NC='\033[0m'
 		cd ..  
 #		return 0 
 		printf "${RED}Xvid installed successfully${NC}\n" 
-		exit; 
 #} 
 
 # Lame Codec 
