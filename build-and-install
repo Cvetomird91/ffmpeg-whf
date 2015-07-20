@@ -14,27 +14,29 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' 
 
-if [ "$1" == '--debug-mode' ]; then
-	DBG='>/dev/null 2>&1';
-elif [ "$1"  ];
-	DBG=''
-fi  
+#if [ "$1" == '--debug-mode' ]; then
+#	DBG='>/dev/null 2>&1';
+#elif [ "$1"  ];
+#	DBG=''
+#fi  
 
 #function install_xvid { 
-		printf "${WHITE}Downloading XVid source code${NC}\n" 
-		wget http://downloads.xvid.org/downloads/xvidcore-1.3.2.tar.gz
+		printf "${WHITE}Downloading XVid source code.${NC}\n" 
+		curl -o xvidcore-1.3.2.tar.gz http://downloads.xvid.org/downloads/xvidcore-1.3.2.tar.gz  
 		tar xf xvidcore-1.3.2.tar.gz 
 		cd xvidcore/build/generic
-		printf "${GREEN} Prepare and build Xvid source ${NC}\n" 
+		printf "\n"
+		printf "${GREEN}Prepare, build and install Xvid source.${NC}\n" 
 		./configure >/dev/null 2>&1 
 		make >/dev/null 2>&1
 		make install >/dev/null 2>&1
 		ldconfig 
-		rm  xvidcore-1.3.2.tar.gz 
+		rm  xvidcore-1.3.2.tar.gz 2>&1 
 		rm -rf xvidcore/ 
-		cd 
-		return 0 
-		printf "{RED}Xvid installed successfully${NC}\n" 
+		cd ..  
+#		return 0 
+		printf "${RED}Xvid installed successfully${NC}\n" 
+		exit; 
 #} 
 
 # Lame Codec 
