@@ -52,6 +52,7 @@ rm -rf lame-3.98.4/
 wget http://downloads.sourceforge.net/faac/faac-1.28.tar.gz
 tar xf faac-1.28.tar.gz
 cd faac-1.28
+sed -i '126d' common/mp4v2/mpeg4ip.h
 ./bootstrap
 ./configure 
 make && make install 
