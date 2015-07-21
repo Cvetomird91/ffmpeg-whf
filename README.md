@@ -17,7 +17,7 @@ Preparation for RHEL-based systems:
 
 ### sudo yum install automake autoconf yasm nasm git
 
-Script has been tested on Debian Wheezy 7.8 
+Script has been tested on Debian Wheezy 7.8 and CentOS 6.6 
 
 Things to be added:
 
