@@ -26,6 +26,7 @@ Things to be added:
 - normal mode with reduced output 
 - debugging mode with full output from compilation steps 
 - options for different AAC implementations (FAAC, FDK-AAC, libvo-aacenc etc) - default is FAAC 
+- checks if tarballs are taking too much to download and reattempt if this is the case 
 
 
 Here are some examples for testing FFMpeg performace with FAAC: 
