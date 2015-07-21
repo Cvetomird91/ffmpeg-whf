@@ -27,13 +27,12 @@ NC='\033[0m'
 		cd xvidcore/build/generic
 		printf "\n"
 		printf "${GREEN}Prepare, build and install Xvid source.${NC}\n" 
-		./configure >/dev/null 2>&1 
-		make >/dev/null 2>&1
-		make install >/dev/null 2>&1
+		./configure >/dev/null # 2>&1 
+		make >/dev/null #2>&1
+		make install >/dev/null #2>&1
 		ldconfig 
-		rm  xvidcore-1.3.2.tar.gz 2>&1 
-		rm -rf xvidcore/ 
 		cd ..  
+		rm -rf xvidcore* 
 #		return 0 
 		printf "${RED}Xvid installed successfully${NC}\n" 
 #} 

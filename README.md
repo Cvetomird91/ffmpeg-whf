@@ -11,6 +11,25 @@ Run as root to compile FFMpeg with the following Codecs:
 
 Preparation for Debian-based systems: 
 
-### sudo apt-get install autoconf yasm nasm git 
+### sudo apt-get install automake aclocal autoconf yasm nasm git 
+
+Preparation for RHEL-based systems:
+
+### sudo yum install automake autoconf yasm nasm git
 
 Script has been tested on Debian Wheezy 7.8 
+
+Things to be added:
+
+- "garbage collection" for downloaded codecs' source code tarballs 
+- colorful output for the different steps 
+- normal mode with reduced output 
+- debugging mode with full output from compilation steps 
+- options for different AAC implementations (FAAC, FDK-AAC, libvo-aacenc etc) - default is FAAC 
+
+
+Here are some examples for testing FFMpeg performace with FAAC: 
+https://trac.ffmpeg.org/wiki/Encode/AAC
+
+A post on AAC implementations: 
+http://spectralhole.blogspot.de/2010/12/androids-stagefright-aac-encoder-or.html
