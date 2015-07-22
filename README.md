@@ -11,11 +11,11 @@ Run as root to compile FFMpeg with the following Codecs:
 
 Preparation for Debian-based systems: 
 
-### sudo apt-get install automake aclocal autoconf yasm nasm git 
+### sudo apt-get install automake aclocal autoconf yasm nasm git wget curl
 
 Preparation for RHEL-based systems:
 
-### sudo yum install automake autoconf yasm nasm git
+### sudo yum install automake autoconf yasm nasm git wget curl 
 
 Script has been tested on Debian Wheezy 7.8 and CentOS 6.6 
 
