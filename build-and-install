@@ -83,6 +83,7 @@ function install_faac {
 
 install_xvid
 install_x264
+install_faac 
 for i in ${SOURCES_TAR[@]} ; do install_from_tar $i; done 
 for y in ${SOURCES_GIT[@]}; do install_from_git $y; done 
 
