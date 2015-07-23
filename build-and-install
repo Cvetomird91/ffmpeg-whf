@@ -87,8 +87,7 @@ function install_faac {
 		make && make install
 		ldconfig
 		cd ..
-		rm -rf faac-1.28.tar.gz
-		rm -rf faac-1.28/
+		rm -rf faac-1.28*
 } 
 
 install_xvid
