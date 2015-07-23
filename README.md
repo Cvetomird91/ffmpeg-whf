@@ -1,6 +1,7 @@
 Run as root to compile FFMpeg with the following Codecs:
 
-- Lame 
+- Xvid 
+- Lame MP3 Codec  
 - FAAC 
 - OpenCore AMR Codec 
 - OGG 
