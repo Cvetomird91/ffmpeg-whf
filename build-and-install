@@ -13,27 +13,29 @@ WHITE='\033[1;37m'
 NC='\033[0m' 
 
 function install_xvid { 
-        curl -o xvidcore-1.3.2.tar.gz http://downloads.xvid.org/downloads/xvidcore-1.3.2.tar.gz
+    	 printf "${WHITE} Downloading ${FILE} source code... ${NC}\n"
+        wget -N http://downloads.xvid.org/downloads/xvidcore-1.3.2.tar.gz 
         tar xf xvidcore-1.3.2.tar.gz
         cd xvidcore/build/generic
-        #printf "\n"
-        #printf "${GREEN}Prepare, build and install Xvid source.${NC}\n"
+        printf "\n"
+        printf "${WHITE}Prepare, build and install Xvid source.${NC}\n"
         ./configure >/dev/null # 2>&1
         make >/dev/null #2>&1
         make install >/dev/null #2>&1
         ldconfig
         cd ..
         rm -rf xvidcore*
-        #printf "${RED}Xvid installed successfully${NC}\n"
 } 
 
 function install_from_tar {
     URL="$1"
     FILE=$(echo $URL | awk -F "/" '{print $NF}' )
     DIR=$(echo $FILE | sed 's|.tar.*||g' )
-    wget $URL
+    printf "${WHITE} Downloading ${FILE} source code... ${NC}\n"
+    wget -N $URL -O $FILE
     tar xf $FILE
     cd $DIR
+    printf "${WHITE} Configure, compile and install ${FILE} ... ${NC}\n"
     ./configure
     make
     make install
@@ -42,6 +44,7 @@ function install_from_tar {
     rm -rf $DIR
     rm $FILE
 }
+
 
 function install_from_git {
     REPO="$1"
