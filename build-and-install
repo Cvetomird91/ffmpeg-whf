@@ -14,7 +14,7 @@ NC='\033[0m'
 
 function install_xvid { 
     	 printf "${WHITE} Downloading ${FILE} source code... ${NC}\n"
-        wget -N http://downloads.xvid.org/downloads/xvidcore-1.3.2.tar.gz 
+        wget http://downloads.xvid.org/downloads/xvidcore-1.3.2.tar.gz 
         tar xf xvidcore-1.3.2.tar.gz
         cd xvidcore/build/generic
         printf "\n"
@@ -32,7 +32,7 @@ function install_from_tar {
     FILE=$(echo $URL | awk -F "/" '{print $NF}' )
     DIR=$(echo $FILE | sed 's|.tar.*||g' )
     printf "${WHITE} Downloading ${FILE} source code... ${NC}\n"
-    wget -N $URL -O $FILE
+    wget $URL -O $FILE
     tar xf $FILE
     cd $DIR
     printf "${WHITE} Configure, compile and install ${FILE} ... ${NC}\n"
@@ -52,6 +52,7 @@ function install_from_git {
 	printf "${WHITE}Downloading $DIR source code.${NC}"
 	git clone $REPO
     cd $DIR
+    printf "${WHITE} Configure, compile and install ${FILE} ... ${NC}\n"
     ./configure
     make
     make install
@@ -62,8 +63,10 @@ function install_from_git {
 }
 
 function install_x264 { 
+		"${WHITE} Downloading x264 source code... ${NC}\n"
 		git clone git://git.videolan.org/x264.git
 		cd x264
+		"${WHITE} Configure, compile and install x264 ... ${NC}\n"
 		./configure --enable-static --disable-asm
 		make
 		make install
@@ -73,10 +76,12 @@ function install_x264 {
 } 
 
 function install_faac { 
-		wget http://downloads.sourceforge.net/faac/faac-1.28.tar.gz
+		"${WHITE} Downloading FAAC source code... ${NC}\n"
+		wget http://downloads.sourceforge.net/faac/faac-1.28.tar.gz -O faac-1.28.tar.gz
 		tar xf faac-1.28.tar.gz
 		cd faac-1.28
 		sed -i '126d' common/mp4v2/mpeg4ip.h
+		"${WHITE} Configure, compile and install FAAC ... ${NC}\n"
 		./bootstrap
 		./configure
 		make && make install
@@ -94,6 +99,7 @@ for y in ${SOURCES_GIT[@]}; do install_from_git $y; done
 
 git clone git://git.videolan.org/ffmpeg.git ffmpeg
 cd ffmpeg
+printf "${WHITE}Building and installing Xvid source.${NC}\n"
 ./configure --enable-version3 --enable-libopencore-amrnb --enable-libmp3lame \
 --enable-libopencore-amrwb --enable-libvpx --enable-libfaac \
 --enable-libmp3lame --enable-libtheora --enable-libvorbis \
