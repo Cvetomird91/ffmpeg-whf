@@ -12,11 +12,11 @@ Run as root to compile FFMpeg with the following Codecs:
 
 Preparation for Debian-based systems: 
 
-### sudo apt-get install automake gcc make aclocal autoconf yasm nasm git wget curl libtool 
+### sudo apt-get install automake gcc make aclocal autoconf yasm nasm git wget curl libtool g++
 
 Preparation for RHEL-based systems:
 
-### sudo yum install make automake autoconf yasm nasm git wget curl gcc libtool 
+### sudo yum install make automake autoconf yasm nasm git wget curl gcc libtool gcc-c++
 
 Script has been tested on Debian Wheezy 7.8 and CentOS 6.6. 
 
