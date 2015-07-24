@@ -67,11 +67,11 @@ function install_from_git {
 }
 
 function install_x264 { 
-		"${WHITE} Downloading x264 source code... ${NC}\n"
+		printf "${WHITE} Downloading x264 source code... ${NC}\n"
 		git clone git://git.videolan.org/x264.git
 		cd x264
 		printf "${WHITE} Configure, compile and install x264 ... ${NC}\n"
-		./configure --enable-static --disable-asm
+		./configure --enable-shared --disable-asm
 		make
 		make install
 		if [[ "$?" -eq 0 ]]; then exit "$?"; fi
@@ -97,6 +97,7 @@ function install_faac {
 } 
 
 function install_ffmpeg { 
+		printf "${WHITE} Clone FFMpeg source..${NC}\n"
 		git clone git://git.videolan.org/ffmpeg.git ffmpeg
 		cd ffmpeg
 		printf "${WHITE}Building and installing FFMpeg source.${NC}\n"
