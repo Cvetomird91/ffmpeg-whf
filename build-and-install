@@ -98,7 +98,7 @@ function install_faac {
 function install_ffmpeg { 
 		git clone git://git.videolan.org/ffmpeg.git ffmpeg
 		cd ffmpeg
-		printf "${WHITE}Building and installing Xvid source.${NC}\n"
+		printf "${WHITE}Building and installing FFMpeg source.${NC}\n"
 		./configure --enable-version3 --enable-libopencore-amrnb --enable-libmp3lame \
 		--enable-libopencore-amrwb --enable-libvpx --enable-libfaac \
 		--enable-libmp3lame --enable-libtheora --enable-libvorbis \
