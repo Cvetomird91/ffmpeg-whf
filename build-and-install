@@ -32,11 +32,11 @@ function install_from_tar {
     URL="$1"
     FILE=$(echo $URL | awk -F "/" '{print $NF}' )
     DIR=$(echo $FILE | sed 's|.tar.*||g' )
-    printf "${WHITE} Downloading ${FILE} source code... ${NC}\n"
+    printf "${WHITE} Downloading ${DIR} source code... ${NC}\n"
     wget $URL -O $FILE
     tar xf $FILE
     cd $DIR
-    printf "${WHITE} Configure, compile and install ${FILE} ... ${NC}\n"
+    printf "${WHITE} Configure, compile and install ${DIR} ... ${NC}\n"
     ./configure
     make
     make install
@@ -51,10 +51,10 @@ function install_from_tar {
 function install_from_git {
     REPO="$1"
     DIR=$(echo $REPO | awk -F "/" '{print $NF}' | sed 's|.git||g' )
-	printf "${WHITE}Downloading $DIR source code.${NC}"
-	git clone $REPO
+    printf "${WHITE}Downloading $DIR source code.${NC}"
+    git clone $REPO
     cd $DIR
-    printf "${WHITE} Configure, compile and install ${FILE} ... ${NC}\n"
+    printf "${WHITE} Configure, compile and install ${DIR} ... ${NC}\n"
     ./configure
     make
     make install 
