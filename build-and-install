@@ -51,7 +51,7 @@ function install_from_tar {
 function install_from_git {
     REPO="$1"
     DIR=$(echo $REPO | awk -F "/" '{print $NF}' | sed 's|.git||g' )
-    printf "${WHITE}Downloading $DIR source code.${NC}"
+    printf "${WHITE}Downloading $DIR source code.${NC}\n"
     git clone $REPO
     cd $DIR
     printf "${WHITE} Configure, compile and install ${DIR} ... ${NC}\n"
