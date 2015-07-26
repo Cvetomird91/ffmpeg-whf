@@ -18,7 +18,7 @@ Preparation for RHEL-based systems:
 
 ### sudo yum install make automake autoconf yasm nasm git wget curl gcc libtool gcc-c++
 
-Script has been tested on Debian Wheezy 7.8 and CentOS 6.6. 
+The script has been tested on Debian Wheezy 7.8 and CentOS 6.6. 
 
 Things to be added:
 
