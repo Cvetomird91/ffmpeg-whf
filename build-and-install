@@ -42,8 +42,12 @@ function install_from_tar {
     make install
     ldconfig
     cd ..
-    rm -rf $DIR
-    rm -rf $FILE
+    if [ ! -d /usr/src/$DIR ]; then
+    	mv $DIR /usr/src/$DIR;
+    else 
+    	rm -rf $DIR;
+    fi
+    rm $FILE
 }
 
 
