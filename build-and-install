@@ -63,8 +63,11 @@ function install_from_git {
     make install 
     ldconfig
     cd ..
-    rm -rf $DIR
-	return 0 
+    if [ ! -d /usr/src/$DIR ]; then
+    	mv $DIR /usr/src/$DIR;
+    else 
+    	rm -rf $DIR;
+    fi
 }
 
 function install_x264 { 
