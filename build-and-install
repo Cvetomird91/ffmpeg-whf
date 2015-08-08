@@ -30,7 +30,7 @@ function install_xvid {
 
 function install_from_tar {
     URL="$1"
-    FILE=$(echo $URL | awk -F "/" '{print $NF}' )
+    FILE=$( basename $URL )
     DIR=$(echo $FILE | sed 's|.tar.*||g' )
     printf "${WHITE} Downloading ${DIR} source code... ${NC}\n"
     wget $URL -O $FILE
