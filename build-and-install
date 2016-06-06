@@ -128,10 +128,13 @@ function install_ffmpeg {
 		cd ..
 		rm -rf ffmpeg/
 }
+function main() {
+	install_xvid
+	install_x264
+	install_faac
+	for i in ${SOURCES_TAR[@]} ; do install_from_tar $i; done
+	for y in ${SOURCES_GIT[@]}; do install_from_git $y; done
+	install_ffmpeg
+}
 
-install_xvid
-install_x264
-install_faac 
-for i in ${SOURCES_TAR[@]} ; do install_from_tar $i; done 
-for y in ${SOURCES_GIT[@]}; do install_from_git $y; done 
-install_ffmpeg
+main
