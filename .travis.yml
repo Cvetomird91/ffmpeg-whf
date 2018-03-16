@@ -1,0 +1,12 @@
+before_install:
+    sudo apt-get install automake gcc make aclocal autoconf yasm nasm git wget curl libtool g++
+
+notifications:
+    email:
+        recipients:
+            - cvetomirdenchev@gmail.com
+        on_success: always
+        on_failure: always
+
+branches:
+    only: ["master"]
