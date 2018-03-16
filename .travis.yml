@@ -11,5 +11,4 @@ notifications:
 branches:
     only: ["master"]
 
-language:
-    bash
+language: bash
