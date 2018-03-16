@@ -14,4 +14,5 @@ branches:
 language: bash
 
 script:
-    bash -v build-and-install
+    sudo bash -v build-and-install;
+    ffmpeg --version
